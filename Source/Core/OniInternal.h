@@ -34,7 +34,7 @@ ONI_C_API void oniWriteLogEntry(const char* mask, int severity, const char* mess
 // ONI_C_API OniStatus oniSetLogConsoleOutput(const OniBool bConsoleOutput);
 // 
 // ONI_C_API OniStatus oniSetLogFileOutput(const OniBool bFileOutput);
-// #if ONI_PLATFORM == ONI_PLATFORM_ANDROID_ARM
+// #if ONI_PLATFORM == ONI_PLATFORM_ANDROID_ARM || ONI_PLATFORM == ONI_PLATFORM_ANDROID_X86_64
 // ONI_C_API OniStatus oniSetLogAndroidOutput(OniBool bAndroidOutput);
 //#endif
 #endif //_ONI_INTERNAL_H_

@@ -485,7 +485,7 @@ ONI_C_API OniStatus oniSetLogFileOutput(OniBool bFileOutput)
 	return ONI_STATUS_OK;
 }
 
-#if ONI_PLATFORM == ONI_PLATFORM_ANDROID_ARM
+#if ONI_PLATFORM == ONI_PLATFORM_ANDROID_ARM || ONI_PLATFORM == ONI_PLATFORM_ANDROID_X86_64
 ONI_C_API OniStatus oniSetLogAndroidOutput(OniBool bAndroidOutput)
 {
 	XnStatus rc = xnLogSetAndroidOutput((XnBool)bAndroidOutput);

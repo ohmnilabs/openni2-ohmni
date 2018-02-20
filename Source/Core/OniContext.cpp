@@ -201,7 +201,7 @@ XnStatus Context::loadLibraries(const char* directoryName)
 	typedef XnChar FileName[XN_FILE_MAX_PATH];
 	FileName* acsFileList = NULL;
 
-#if (ONI_PLATFORM != ONI_PLATFORM_ANDROID_ARM)
+#if (ONI_PLATFORM != ONI_PLATFORM_ANDROID_ARM && ONI_PLATFORM != ONI_PLATFORM_ANDROID_X86_64)
 	XnChar cpSearchString[XN_FILE_MAX_PATH] = "";
 
 	xnLogVerbose(XN_MASK_ONI_CONTEXT, "Looking for drivers in drivers repository '%s'", directoryName);
