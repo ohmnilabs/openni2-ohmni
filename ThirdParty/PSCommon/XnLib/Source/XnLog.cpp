@@ -30,7 +30,7 @@
 
 #include "XnLogConsoleWriter.h"
 #include "XnLogFileWriter.h"
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 #include "XnLogAndroidWriter.h"
 #endif
 
@@ -108,7 +108,7 @@ public:
 	// Writers
 	XnLogConsoleWriter consoleWriter;
 	XnLogFileWriter fileWriter;
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 	XnLogAndroidWriter AndroidWriter;
 #endif
 
@@ -424,7 +424,7 @@ XN_C_API XnStatus xnLogInitFromINIFile(const XnChar* cpINIFileName, const XnChar
 		XN_IS_STATUS_OK(nRetVal);
 	}
 
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 	nRetVal = xnOSReadIntFromINI(cpINIFileName, cpSectionName, "LogWriteToAndroidLog", &nTemp);
 	if (nRetVal == XN_STATUS_OK)
 	{
@@ -553,7 +553,7 @@ XN_C_API XnStatus xnLogSetFileOutput(XnBool bFileOutput)
 	return XN_STATUS_OK;
 }
 
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 XN_C_API XnStatus xnLogSetAndroidOutput(XnBool bAndroidOutput)
 {
 	XnStatus nRetVal = XN_STATUS_OK;

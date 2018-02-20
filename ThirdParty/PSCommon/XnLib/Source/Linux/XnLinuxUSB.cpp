@@ -23,7 +23,7 @@
 //---------------------------------------------------------------------------
 #include <XnUSB.h>
 
-#if (XN_PLATFORM == XN_PLATFORM_ANDROID_ARM)
+#if (XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64)
 #include <libusb.h>
 #else
 #include <libusb-1.0/libusb.h>
@@ -1653,7 +1653,7 @@ XN_C_API XnStatus xnUSBShutdownReadThread(XN_USB_EP_HANDLE pEPHandle)
 		pThreadData->bKillReadThread = TRUE;
 
 		// PATCH: we don't cancel the requests, because there is a bug causing segmentation fault.
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 		// cancel all pending requests
 		for (XnUInt32 i = 0; i < pThreadData->nNumBuffers; ++i)
 		{

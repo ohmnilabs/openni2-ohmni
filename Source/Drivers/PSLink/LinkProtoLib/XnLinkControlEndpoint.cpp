@@ -52,7 +52,7 @@ XnStatus LinkControlEndpoint::Init(XnUInt32 nMaxOutMsgSize, IConnectionFactory* 
 		//TODO: Once we have service discovery, ask the device what's the max packet size.
 		//In any way, we DON'T want to ask m_pConnection what its packet size is, cuz that's the low level packet size.
 
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 	nRetVal = xnOSCreateMutex(&m_hMutex);
 	XN_IS_STATUS_OK(nRetVal);
 #else

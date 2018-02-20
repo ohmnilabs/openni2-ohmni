@@ -107,7 +107,7 @@ XN_C_API XnStatus XN_C_DECL xnLogSetConsoleOutput(XnBool bConsoleOutput);
 */
 XN_C_API XnStatus XN_C_DECL xnLogSetFileOutput(XnBool bFileOutput);
 
-#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM
+#if XN_PLATFORM == XN_PLATFORM_ANDROID_ARM || XN_PLATFORM == XN_PLATFORM_ANDROID_X86_64
 /** Configures if log entries will be printed to the Android log.
 *
 * @param	bAndroidOutput	[in]	TRUE to print log entries to the Android log, FALSE otherwise.
