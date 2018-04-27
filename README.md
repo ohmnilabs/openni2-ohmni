@@ -1,6 +1,21 @@
-# OpenNI
+
+# OpenNI (android-x86 x86_64 mods by OhmniLabs)
 
 http://structure.io/openni
+
+## Building for Ohmni ##
+
+To make ndk-build happy, you must clone this repo as a folder named jni and run ndk-build from the directory above it.  For example:
+
+```
+mkdir openni2-ohmni
+cd openni2-ohmni
+git clone https://github.com/ohmnilabs/openni2-ohmni jni
+/path/to/your/ndk-build
+```
+
+We have compiled this successfully with Android NDK r12b.  Newer versions of the NDK should work as well but have not been tested.
+
 
 ## Develop branch ##
 
